@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Blog - Blog App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">BlogApp</a></h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Create a New Blog Post</h2>
+        <form id="blogForm">
+            <label>Blog Title</label>
+            <input type="text" id="blogTitle" required>
+            
+            <label>Content</label>
+            <textarea id="blogContent" rows="6" required></textarea>
+            
+            <button type="submit">Publish Blog</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
