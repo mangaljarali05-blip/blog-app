@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home - Blog App</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1><a href="index.html">BlogApp</a></h1>
-        <nav id="navLinks">
-            <!-- Dynamically populated by JavaScript based on login state -->
-        </nav>
-    </header>
+// युजर रजिस्ट्रेशन करण्यासाठी फंक्शन
+async function registerUser(username, email, password) {
+  try {
+    const response = await fetch('http://localhost:5000/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, email, password })
+    });
 
-    <div class="container">
-        <h2>Recent Blog Posts</h2>
-        <div id="blogsContainer" style="margin-top: 20px;">
-            <!-- Blog posts will show up here dynamically -->
-        </div>
-    </div>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+    const data = await response.json();
+    
+    if (response.ok) {
+      alert('Registration Successful!');
+    } else {
+      alert(data.message || 'Something went wrong');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
