@@ -2,30 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create Blog - Blog App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogApp - Dashboard</title>
+    <link rel="stylesheet"href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1><a href="index.html">BlogApp</a></h1>
+    <header class="navbar">
+        <h2>BlogApp Dashboard</h2>
         <nav>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="#" id="logoutBtn">Logout</a>
+            <a href="create-blog.html" class="btn">+ Create New Blog</a>
+            <button id="logoutBtn" class="btn-danger">Logout</button>
         </nav>
     </header>
 
-    <div class="container">
-        <h2>Create a New Blog Post</h2>
-        <form id="blogForm">
-            <label>Blog Title</label>
-            <input type="text" id="blogTitle" required>
-            
-            <label>Content</label>
-            <textarea id="blogContent" rows="6" required></textarea>
-            
-            <button type="submit">Publish Blog</button>
-        </form>
-    </div>
+    <main class="container">
+        <section class="welcome-card">
+            <h3>Welcome, <span id="username">User</span>! 👋</h3>
+            <p>Manage all your blogs from this dashboard.</p>
+        </section>
+
+        <section class="blogs-section">
+            <h3>Your Published Blogs</h3>
+            <div id="blogContainer" class="blog-grid">
+                <!-- Node.js बॅकएंडवरून येणारे सर्व ब्लॉग्स इथे दिसतील -->
+                <p>Loading your blogs...</p>
+            </div>
+        </section>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
